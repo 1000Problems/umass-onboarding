@@ -422,6 +422,25 @@ body {
 .tc-urgency.important { background: var(--gold); }
 .tc-urgency.normal { background: var(--sage); }
 
+.tc-urgency.completed {
+  background: var(--sage);
+  box-shadow: 0 0 8px rgba(122, 158, 126, 0.4);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tc-urgency.completed::after {
+  content: '✓';
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 /* ==================== HOUSING / DORMS ==================== */
 .dorm-grid {
   display: grid;
@@ -1198,55 +1217,55 @@ body {
     <p class="section-subtitle fade-up">Miss one of these and you'll be scrambling. The red dots are non-negotiable.</p>
 
     <div class="timeline-grid">
-      <div class="timeline-card fade-up">
+      <div class="timeline-card fade-up" data-checklist-key="deposit">
         <div class="tc-urgency critical"></div>
         <div class="tc-date">May 1, 2026</div>
         <div class="tc-title">Enrollment Deposit</div>
         <div class="tc-desc">Pay your deposit to confirm your spot at UMass. This is the very first step — nothing else moves until this is done.</div>
       </div>
-      <div class="timeline-card fade-up">
+      <div class="timeline-card fade-up" data-checklist-key="rap">
         <div class="tc-urgency important"></div>
         <div class="tc-date">May 19, 2026</div>
         <div class="tc-title">RAP Lottery Opens</div>
         <div class="tc-desc">Residential Academic Programs lottery begins. Results announced May 28. RAPs connect your housing with a class and community of peers.</div>
       </div>
-      <div class="timeline-card fade-up">
+      <div class="timeline-card fade-up" data-checklist-key="housing-open">
         <div class="tc-urgency critical"></div>
         <div class="tc-date">June 1, 2026</div>
         <div class="tc-title">Housing App Opens</div>
         <div class="tc-desc">Log into the Housing Portal, sign the Occupancy License, complete your Roommate Matching Profile, and submit housing preferences.</div>
       </div>
-      <div class="timeline-card fade-up">
+      <div class="timeline-card fade-up" data-checklist-key="placements">
         <div class="tc-urgency critical"></div>
         <div class="tc-date">June 4, 2026</div>
         <div class="tc-title">Placement Assessments</div>
         <div class="tc-desc">Complete "Guide to the U," register for "Ready for the U," and finish Math, Writing, and Foreign Language placements via the OWL system. These can only be taken once.</div>
       </div>
-      <div class="timeline-card fade-up">
+      <div class="timeline-card fade-up" data-checklist-key="advising">
         <div class="tc-urgency important"></div>
         <div class="tc-date">June 8 – July 24</div>
         <div class="tc-title">Advising Appointments</div>
         <div class="tc-desc">Online meetings with your advisor to review placements and register for classes. Advisors contact you at your UMass email via Navigate.</div>
       </div>
-      <div class="timeline-card fade-up">
+      <div class="timeline-card fade-up" data-checklist-key="housing-due">
         <div class="tc-urgency critical"></div>
         <div class="tc-date">June 30, 2026</div>
         <div class="tc-title">Housing App Deadline</div>
         <div class="tc-desc">Final day to submit your housing preferences and roommate group. Don't wait until the last day — the portal can slow down.</div>
       </div>
-      <div class="timeline-card fade-up">
+      <div class="timeline-card fade-up" data-checklist-key="room-assign">
         <div class="tc-urgency normal"></div>
         <div class="tc-date">August 3, 2026</div>
         <div class="tc-title">Room Assignments on SPIRE</div>
         <div class="tc-desc">Check SPIRE for your residential assignment and roommate info. Start reaching out to your roommate(s) on social media.</div>
       </div>
-      <div class="timeline-card fade-up">
+      <div class="timeline-card fade-up" data-checklist-key="tuition">
         <div class="tc-urgency critical"></div>
         <div class="tc-date">August 10, 2026</div>
         <div class="tc-title">Tuition Bills Due</div>
         <div class="tc-desc">Tuition payment deadline. Make sure financial aid, scholarships, and payment plans are sorted well before this date.</div>
       </div>
-      <div class="timeline-card fade-up">
+      <div class="timeline-card fade-up" data-checklist-key="alcoholedu">
         <div class="tc-urgency important"></div>
         <div class="tc-date">September 1, 2026</div>
         <div class="tc-title">AlcoholEdu & SAPU Modules</div>
@@ -1264,7 +1283,7 @@ body {
         <div class="tc-title">Welcome to the U</div>
         <div class="tc-desc">Orientation week with campus tours, social events, and department mixers. Go to everything — this is prime friend-making time.</div>
       </div>
-      <div class="timeline-card fade-up">
+      <div class="timeline-card fade-up" data-checklist-key="shbp">
         <div class="tc-urgency important"></div>
         <div class="tc-date">September 21, 2026</div>
         <div class="tc-title">SHBP Waiver Deadline</div>
@@ -1607,75 +1626,75 @@ body {
     <p class="section-subtitle fade-up">Click to check off as you go. Everything you need to do before September.</p>
 
     <div class="checklist-grid" id="checklistGrid">
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="deposit">
         <div class="cl-box"></div>
         <div class="cl-text">Pay enrollment deposit <small>Due May 1</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="netid">
         <div class="cl-box"></div>
         <div class="cl-text">Activate your NetID & set up two-step login (MFA) <small>Microsoft Authenticator app</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="rap">
         <div class="cl-box"></div>
         <div class="cl-text">Enter the RAP lottery <small>Opens May 19, results May 28</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="guide-u">
         <div class="cl-box"></div>
         <div class="cl-text">Complete "Guide to the U" module <small>Required before advising</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="ready-u">
         <div class="cl-box"></div>
         <div class="cl-text">Register for "Ready for the U" orientation <small>Required before advising</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="placements">
         <div class="cl-box"></div>
         <div class="cl-text">Take all placement assessments (Math, Writing, Foreign Language) <small>Due June 4 — one attempt only!</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="ucard">
         <div class="cl-box"></div>
         <div class="cl-text">Upload your UCard photo <small>Due June 4</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="housing-open">
         <div class="cl-box"></div>
         <div class="cl-text">Open Housing Portal & sign Occupancy License <small>Opens June 1</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="roommate-profile">
         <div class="cl-box"></div>
         <div class="cl-text">Complete Roommate Matching Profile <small>Be honest about sleep & habits</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="housing-due">
         <div class="cl-box"></div>
         <div class="cl-text">Submit housing preferences & roommate group <small>Due June 30</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="advising">
         <div class="cl-box"></div>
         <div class="cl-text">Attend online advising appointment <small>June 8 – July 24</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="register-classes">
         <div class="cl-box"></div>
         <div class="cl-text">Register for fall classes with advisor <small>During advising appointment</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="room-assign">
         <div class="cl-box"></div>
         <div class="cl-text">Check room assignment on SPIRE <small>Posted August 3</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="tuition">
         <div class="cl-box"></div>
         <div class="cl-text">Pay tuition or confirm financial aid <small>Due August 10</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="alcoholedu">
         <div class="cl-box"></div>
         <div class="cl-text">Complete AlcoholEdu & SAPU online modules <small>Due September 1 — or you'll get a hold</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="immunization">
         <div class="cl-box"></div>
         <div class="cl-text">Submit immunization records <small>Required for enrollment</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="shbp">
         <div class="cl-box"></div>
         <div class="cl-text">Waive SHBP if you have private insurance <small>Due September 21 — must do EVERY fall</small></div>
       </div>
-      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+      <div class="checklist-item fade-up" data-key="eduroam">
         <div class="cl-box"></div>
         <div class="cl-text">Connect to eduroam Wi-Fi on move-in day <small>Campus wireless network</small></div>
       </div>
@@ -1777,18 +1796,16 @@ body {
 </footer>
 
 <script>
-// Nav scroll effect
+// ==================== NAV ====================
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// Mobile menu toggle
 document.getElementById('mobileToggle').addEventListener('click', () => {
   document.getElementById('navLinks').classList.toggle('open');
 });
 
-// Close mobile menu on link click
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     document.getElementById('navLinks').classList.remove('open');
@@ -1815,7 +1832,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Scroll reveal animations
+// ==================== SCROLL REVEAL ====================
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1825,6 +1842,82 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// ==================== CHECKLIST PERSISTENCE ====================
+const STORAGE_KEY = 'umass-onboarding-checklist';
+
+// Load saved state from localStorage
+function loadChecklist() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return saved ? JSON.parse(saved) : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+// Save state to localStorage
+function saveChecklist(state) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch (e) {
+    // localStorage unavailable — degrade gracefully
+  }
+}
+
+// Sync a single key's checked state to any linked timeline card
+function syncTimelineCard(key, isChecked) {
+  const card = document.querySelector(`.timeline-card[data-checklist-key="${key}"]`);
+  if (!card) return;
+
+  const dot = card.querySelector('.tc-urgency');
+  if (!dot) return;
+
+  if (isChecked) {
+    // Store the original urgency class so we can restore it
+    if (!dot.dataset.originalClass) {
+      dot.dataset.originalClass = dot.className.replace('tc-urgency', '').trim();
+    }
+    dot.className = 'tc-urgency completed';
+  } else {
+    // Restore original urgency class
+    const original = dot.dataset.originalClass || 'normal';
+    dot.className = 'tc-urgency ' + original;
+  }
+}
+
+// Apply saved state to all checklist items and timeline cards on page load
+function applyChecklist() {
+  const state = loadChecklist();
+  document.querySelectorAll('.checklist-item[data-key]').forEach(item => {
+    const key = item.dataset.key;
+    if (state[key]) {
+      item.classList.add('checked');
+      syncTimelineCard(key, true);
+    }
+  });
+}
+
+// Attach click handlers to checklist items
+document.querySelectorAll('.checklist-item[data-key]').forEach(item => {
+  item.addEventListener('click', () => {
+    const key = item.dataset.key;
+    item.classList.toggle('checked');
+
+    const isChecked = item.classList.contains('checked');
+    const state = loadChecklist();
+    if (isChecked) {
+      state[key] = true;
+    } else {
+      delete state[key];
+    }
+    saveChecklist(state);
+    syncTimelineCard(key, isChecked);
+  });
+});
+
+// Run on page load
+applyChecklist();
 </script>
 </body>
 </html>
