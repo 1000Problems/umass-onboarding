@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're In. Now What? — UMass Amherst Isenberg Class of 2030</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --maroon: #881c1c;
+  --maroon-deep: #6b1515;
+  --maroon-light: #a82d2d;
+  --cream: #faf6f0;
+  --cream-warm: #f5efe5;
+  --ink: #1a1a1a;
+  --ink-light: #3d3d3d;
+  --ink-muted: #6b6b6b;
+  --gold: #d4a843;
+  --gold-light: #e8c96a;
+  --sage: #7a9e7e;
+  --sky: #5b8fb9;
+  --coral: #d4715e;
+  --lavender: #8b7cb8;
+  --sand: #c4b394;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==================== NAV ==================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(250, 246, 240, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(136, 28, 28, 0.08);
+  transition: all 0.4s ease;
+}
+
+.nav.scrolled {
+  background: rgba(250, 246, 240, 0.95);
+  box-shadow: 0 2px 40px rgba(0,0,0,0.06);
+}
+
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--maroon);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.nav-logo span { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--ink-light);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.01em;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  background: var(--maroon);
+  color: white;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--maroon);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ==================== HERO ==================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(165deg, var(--maroon-deep) 0%, var(--maroon) 35%, var(--maroon-light) 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 800px 600px at 20% 80%, rgba(212, 168, 67, 0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 600px 400px at 80% 20%, rgba(91, 143, 185, 0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 1000px 800px at 50% 50%, rgba(0,0,0,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px;
+  max-width: 900px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
+  color: white;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  color: var(--maroon);
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.hero-cta svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.hero-cta:hover svg { transform: translateY(3px); }
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: bob 3s ease infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+.hero-scroll-indicator svg {
+  width: 24px;
+  height: 24px;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ==================== DEADLINE TICKER ==================== */
+.ticker-section {
+  background: var(--ink);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.ticker-track {
+  display: flex;
+  animation: scroll-ticker 40s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-track:hover { animation-play-state: paused; }
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 40px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+.ticker-item .date {
+  color: var(--gold);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 0.78rem;
+}
+
+.ticker-item .dot {
+  width: 3px;
+  height: 3px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+}
+
+@keyframes scroll-ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==================== SECTIONS ==================== */
+.section {
+  padding: 120px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--maroon);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  max-width: 640px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+
+/* ==================== TIMELINE ==================== */
+.timeline-section {
+  background: var(--cream-warm);
+  padding: 120px 40px;
+}
+
+.timeline-section .section-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.timeline-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+}
+
+.timeline-card .tc-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--maroon);
+  margin-bottom: 8px;
+  letter-spacing: 0.03em;
+}
+
+.timeline-card .tc-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.timeline-card .tc-desc {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.timeline-card .tc-urgency {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.tc-urgency.critical { background: var(--coral); box-shadow: 0 0 8px rgba(212, 113, 94, 0.4); }
+.tc-urgency.important { background: var(--gold); }
+.tc-urgency.normal { background: var(--sage); }
+
+/* ==================== HOUSING / DORMS ==================== */
+.dorm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.dorm-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.4s ease;
+}
+
+.dorm-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.dorm-header {
+  padding: 32px 28px 20px;
+  position: relative;
+}
+
+.dorm-header .dorm-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.dorm-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.dorm-header .dorm-vibe {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+.dorm-body {
+  padding: 0 28px 28px;
+}
+
+.dorm-body p {
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.dorm-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.dorm-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  letter-spacing: 0.02em;
+}
+
+/* Color coding for dorms */
+.dorm-sw .dorm-icon { background: #fce4e4; }
+.dorm-sw .dorm-tag { background: #fce4e4; color: var(--maroon); }
+.dorm-ne .dorm-icon { background: #dde8f0; }
+.dorm-ne .dorm-tag { background: #dde8f0; color: var(--sky); }
+.dorm-central .dorm-icon { background: #e8e0f0; }
+.dorm-central .dorm-tag { background: #e8e0f0; color: var(--lavender); }
+.dorm-ohill .dorm-icon { background: #dfeee0; }
+.dorm-ohill .dorm-tag { background: #dfeee0; color: var(--sage); }
+.dorm-sylvan .dorm-icon { background: #efe8da; }
+.dorm-sylvan .dorm-tag { background: #efe8da; color: #8b7340; }
+
+/* ==================== HOUSING STEPS ==================== */
+.steps-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.step-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.04);
+  position: relative;
+}
+
+.step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgba(136, 28, 28, 0.08);
+  position: absolute;
+  top: 12px;
+  left: 20px;
+}
+
+.step-card h4 {
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+
+.step-card p {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+/* ==================== DINING ==================== */
+.dining-section {
+  background: var(--maroon-deep);
+  padding: 120px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dining-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 800px 500px at 80% 100%, rgba(212, 168, 67, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.dining-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.dining-section .section-label { color: var(--gold); }
+.dining-section .section-label::before { background: var(--gold); }
+.dining-section .section-title { color: white; }
+.dining-section .section-subtitle { color: rgba(255,255,255,0.6); }
+
+.dining-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(212, 168, 67, 0.15);
+  border: 1px solid rgba(212, 168, 67, 0.25);
+  padding: 10px 20px;
+  border-radius: 100px;
+  color: var(--gold-light);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 40px;
+}
+
+.dining-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.dining-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 32px 28px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.dining-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+
+.dining-card .dc-emoji {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.dining-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.dining-card .dc-nickname {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.dining-card p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.dining-card .dc-hours {
+  margin-top: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.03em;
+}
+
+.meal-plan-box {
+  margin-top: 40px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 36px;
+}
+
+.meal-plan-box h3 {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+
+.meal-plan-box p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.meal-plan-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.meal-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+}
+
+.meal-feature .mf-icon {
+  color: var(--gold);
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ==================== ACADEMICS / ISENBERG ==================== */
+.academics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.acad-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px;
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.3s ease;
+}
+
+.acad-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+}
+
+.acad-card.full-width {
+  grid-column: 1 / -1;
+}
+
+.acad-card .ac-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(136, 28, 28, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.acad-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.acad-card p {
+  font-size: 0.88rem;
+  color: var(--ink-light);
+  line-height: 1.7;
+}
+
+.acad-card .ac-highlight {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(136, 28, 28, 0.04);
+  border-radius: 10px;
+  border-left: 3px solid var(--maroon);
+  font-size: 0.82rem;
+  color: var(--ink-light);
+  font-weight: 500;
+}
+
+/* ==================== SOCIAL / FRIENDS ==================== */
+.social-section {
+  background: linear-gradient(135deg, #f8f4ee 0%, #f0e8db 100%);
+  padding: 120px 40px;
+}
+
+.social-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.social-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px 28px;
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 20px 20px 0 0;
+}
+
+.social-card:nth-child(1)::before { background: var(--coral); }
+.social-card:nth-child(2)::before { background: var(--sage); }
+.social-card:nth-child(3)::before { background: var(--sky); }
+.social-card:nth-child(4)::before { background: var(--lavender); }
+.social-card:nth-child(5)::before { background: var(--gold); }
+.social-card:nth-child(6)::before { background: var(--maroon); }
+
+.social-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.social-card .sc-emoji {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.social-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.social-card p {
+  font-size: 0.85rem;
+  color: var(--ink-light);
+  line-height: 1.7;
+}
+
+.social-card .sc-tip {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+/* ==================== MISTAKES ==================== */
+.mistakes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.mistake-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid rgba(0,0,0,0.04);
+  display: flex;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.mistake-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+}
+
+.mistake-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--coral);
+  opacity: 0.6;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 36px;
+}
+
+.mistake-content h4 {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.mistake-content p {
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+/* ==================== CHECKLIST ==================== */
+.checklist-section {
+  background: var(--ink);
+  padding: 120px 40px;
+  position: relative;
+}
+
+.checklist-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.checklist-section .section-label { color: var(--gold); }
+.checklist-section .section-label::before { background: var(--gold); }
+.checklist-section .section-title { color: white; }
+.checklist-section .section-subtitle { color: rgba(255,255,255,0.5); }
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px 24px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.checklist-item:hover {
+  background: rgba(255,255,255,0.07);
+}
+
+.checklist-item.checked {
+  opacity: 0.5;
+}
+
+.checklist-item.checked .cl-box {
+  background: var(--sage);
+  border-color: var(--sage);
+}
+
+.checklist-item.checked .cl-box::after {
+  content: '✓';
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.cl-box {
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  transition: all 0.3s ease;
+}
+
+.cl-text {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.cl-text small {
+  display: block;
+  color: rgba(255,255,255,0.35);
+  font-weight: 400;
+  font-size: 0.78rem;
+  margin-top: 2px;
+}
+
+/* ==================== PRO TIPS ==================== */
+.tips-section {
+  background: linear-gradient(180deg, var(--cream-warm) 0%, var(--cream) 100%);
+  padding: 120px 40px;
+}
+
+.tips-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tips-marquee {
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+.tips-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll-tips 50s linear infinite;
+}
+
+.tips-track:hover { animation-play-state: paused; }
+
+@keyframes scroll-tips {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.tip-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  min-width: 340px;
+  max-width: 340px;
+  border: 1px solid rgba(0,0,0,0.04);
+  flex-shrink: 0;
+}
+
+.tip-card .tp-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--ink-light);
+  margin-bottom: 16px;
+}
+
+.tip-card .tp-source {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+  background: var(--maroon-deep);
+  padding: 80px 40px 40px;
+  text-align: center;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.footer-logo span { color: var(--gold); }
+
+.footer p {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.82rem;
+  max-width: 500px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover { color: white; }
+
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.25);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .academics-grid { grid-template-columns: 1fr; }
+  .social-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 80px 24px; }
+  .dining-section, .social-section, .checklist-section, .tips-section, .timeline-section { padding: 80px 24px; }
+
+  .nav-links { display: none; }
+  .mobile-toggle { display: flex; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    padding: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  }
+
+  .hero-content { padding: 24px; }
+  .social-grid { grid-template-columns: 1fr; }
+  .dorm-grid { grid-template-columns: 1fr; }
+  .dining-grid { grid-template-columns: 1fr; }
+  .mistakes-grid { grid-template-columns: 1fr; }
+  .steps-row { grid-template-columns: 1fr 1fr; }
+  .timeline-grid { grid-template-columns: 1fr; }
+  .checklist-grid { grid-template-columns: 1fr; }
+}
+
+/* ==================== ANIMATIONS ==================== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Isenberg<span>'</span>30</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#housing">Housing</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#dining">Dining</a></li>
+      <li><a href="#social">Social</a></li>
+      <li><a href="#mistakes">Mistakes</a></li>
+      <li><a href="#checklist">Checklist</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Fall 2026 &middot; Isenberg School of Management</div>
+    <h1>You're <em>in.</em><br>Now what?</h1>
+    <p class="hero-sub">The only guide you actually need for your first semester at UMass Amherst. Built by students who wish they had this.</p>
+    <a href="#timeline" class="hero-cta">
+      Start Here
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+    </a>
+  </div>
+  <div class="hero-scroll-indicator">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+<!-- DEADLINE TICKER -->
+<div class="ticker-section">
+  <div class="ticker-track" id="ticker">
+    <div class="ticker-item"><span class="date">MAY 1</span> Enrollment Deposit Due <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">MAY 19</span> RAP Lottery Opens <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">JUN 1</span> Housing Application Opens <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">JUN 4</span> Placement Assessments Deadline <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">JUN 8</span> Advising Appointments Begin <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">JUN 30</span> Housing Application Due <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">AUG 3</span> Room Assignments Posted on SPIRE <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">AUG 10</span> Tuition Bills Due <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">SEP 1</span> AlcoholEdu Modules Due <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">SEP 2-3</span> Move-In Day <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">SEP 8</span> First Day of Classes <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">SEP 21</span> SHBP Waiver Deadline <span class="dot"></span></div>
+    <!-- Duplicate for seamless loop -->
+    <div class="ticker-item"><span class="date">MAY 1</span> Enrollment Deposit Due <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">MAY 19</span> RAP Lottery Opens <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">JUN 1</span> Housing Application Opens <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">JUN 4</span> Placement Assessments Deadline <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">JUN 8</span> Advising Appointments Begin <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">JUN 30</span> Housing Application Due <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">AUG 3</span> Room Assignments Posted on SPIRE <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">AUG 10</span> Tuition Bills Due <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">SEP 1</span> AlcoholEdu Modules Due <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">SEP 2-3</span> Move-In Day <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">SEP 8</span> First Day of Classes <span class="dot"></span></div>
+    <div class="ticker-item"><span class="date">SEP 21</span> SHBP Waiver Deadline <span class="dot"></span></div>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<section class="timeline-section" id="timeline">
+  <div class="section-inner">
+    <div class="section-label fade-up">01 &mdash; Your Timeline</div>
+    <h2 class="section-title fade-up">Every deadline,<br>in order.</h2>
+    <p class="section-subtitle fade-up">Miss one of these and you'll be scrambling. The red dots are non-negotiable.</p>
+
+    <div class="timeline-grid">
+      <div class="timeline-card fade-up">
+        <div class="tc-urgency critical"></div>
+        <div class="tc-date">May 1, 2026</div>
+        <div class="tc-title">Enrollment Deposit</div>
+        <div class="tc-desc">Pay your deposit to confirm your spot at UMass. This is the very first step — nothing else moves until this is done.</div>
+      </div>
+      <div class="timeline-card fade-up">
+        <div class="tc-urgency important"></div>
+        <div class="tc-date">May 19, 2026</div>
+        <div class="tc-title">RAP Lottery Opens</div>
+        <div class="tc-desc">Residential Academic Programs lottery begins. Results announced May 28. RAPs connect your housing with a class and community of peers.</div>
+      </div>
+      <div class="timeline-card fade-up">
+        <div class="tc-urgency critical"></div>
+        <div class="tc-date">June 1, 2026</div>
+        <div class="tc-title">Housing App Opens</div>
+        <div class="tc-desc">Log into the Housing Portal, sign the Occupancy License, complete your Roommate Matching Profile, and submit housing preferences.</div>
+      </div>
+      <div class="timeline-card fade-up">
+        <div class="tc-urgency critical"></div>
+        <div class="tc-date">June 4, 2026</div>
+        <div class="tc-title">Placement Assessments</div>
+        <div class="tc-desc">Complete "Guide to the U," register for "Ready for the U," and finish Math, Writing, and Foreign Language placements via the OWL system. These can only be taken once.</div>
+      </div>
+      <div class="timeline-card fade-up">
+        <div class="tc-urgency important"></div>
+        <div class="tc-date">June 8 – July 24</div>
+        <div class="tc-title">Advising Appointments</div>
+        <div class="tc-desc">Online meetings with your advisor to review placements and register for classes. Advisors contact you at your UMass email via Navigate.</div>
+      </div>
+      <div class="timeline-card fade-up">
+        <div class="tc-urgency critical"></div>
+        <div class="tc-date">June 30, 2026</div>
+        <div class="tc-title">Housing App Deadline</div>
+        <div class="tc-desc">Final day to submit your housing preferences and roommate group. Don't wait until the last day — the portal can slow down.</div>
+      </div>
+      <div class="timeline-card fade-up">
+        <div class="tc-urgency normal"></div>
+        <div class="tc-date">August 3, 2026</div>
+        <div class="tc-title">Room Assignments on SPIRE</div>
+        <div class="tc-desc">Check SPIRE for your residential assignment and roommate info. Start reaching out to your roommate(s) on social media.</div>
+      </div>
+      <div class="timeline-card fade-up">
+        <div class="tc-urgency critical"></div>
+        <div class="tc-date">August 10, 2026</div>
+        <div class="tc-title">Tuition Bills Due</div>
+        <div class="tc-desc">Tuition payment deadline. Make sure financial aid, scholarships, and payment plans are sorted well before this date.</div>
+      </div>
+      <div class="timeline-card fade-up">
+        <div class="tc-urgency important"></div>
+        <div class="tc-date">September 1, 2026</div>
+        <div class="tc-title">AlcoholEdu & SAPU Modules</div>
+        <div class="tc-desc">Complete these required online modules before arriving or you'll get a registration hold on your account.</div>
+      </div>
+      <div class="timeline-card fade-up">
+        <div class="tc-urgency normal"></div>
+        <div class="tc-date">September 2–3, 2026</div>
+        <div class="tc-title">Move-In Day</div>
+        <div class="tc-desc">You're here. Welcome to the U. Bring less than you think you need — dorm rooms are smaller than they look online.</div>
+      </div>
+      <div class="timeline-card fade-up">
+        <div class="tc-urgency normal"></div>
+        <div class="tc-date">September 2–7, 2026</div>
+        <div class="tc-title">Welcome to the U</div>
+        <div class="tc-desc">Orientation week with campus tours, social events, and department mixers. Go to everything — this is prime friend-making time.</div>
+      </div>
+      <div class="timeline-card fade-up">
+        <div class="tc-urgency important"></div>
+        <div class="tc-date">September 21, 2026</div>
+        <div class="tc-title">SHBP Waiver Deadline</div>
+        <div class="tc-desc">If you have comparable private insurance, submit the waiver every fall to remove the Student Health Benefit Plan charge from your bill.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOUSING -->
+<section class="section" id="housing">
+  <div class="section-label fade-up">02 &mdash; Housing & Roommates</div>
+  <h2 class="section-title fade-up">Where you live<br>changes <em>everything.</em></h2>
+  <p class="section-subtitle fade-up">All freshmen with fewer than 27 credits are required to live on campus. Here's how the process works and what each area actually feels like.</p>
+
+  <div class="steps-row fade-up">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <h4>Sign the License</h4>
+      <p>Log into the Housing Portal and sign your Occupancy License starting June 1.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <h4>Roommate Profile</h4>
+      <p>Complete the matching questionnaire — sleep schedule, noise, cleanliness, guests.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <h4>Form Your Group</h4>
+      <p>Found someone on Instagram or accepted students pages? Create a roommate group to be placed together.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <h4>Submit by June 30</h4>
+      <p>Finalize housing preferences. Assignments post on SPIRE August 3.</p>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 8px;" class="fade-up">The Five Residential Areas</h3>
+  <p style="font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 32px; max-width: 600px;" class="fade-up">Each area has a wildly different personality. Where you land shapes your social life freshman year.</p>
+
+  <div class="dorm-grid">
+    <div class="dorm-card dorm-sw fade-up">
+      <div class="dorm-header">
+        <div class="dorm-icon">🏙️</div>
+        <h3>Southwest</h3>
+        <div class="dorm-vibe">"The biggest party on the East Coast"</div>
+      </div>
+      <div class="dorm-body">
+        <p>The largest area with 5,500 students and high-rise towers. This is the most social area on campus — if you want to meet everyone, this is where it happens. Kennedy Hall is all-freshman and famously loud (don't plan on sleeping before 2 AM on weekends). Cance Hall is nicknamed "No Pants Cance" — enough said.</p>
+        <div class="dorm-tags">
+          <span class="dorm-tag">Party Scene</span>
+          <span class="dorm-tag">High Energy</span>
+          <span class="dorm-tag">5,500 Students</span>
+          <span class="dorm-tag">High-Rise Towers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dorm-card dorm-ne fade-up">
+      <div class="dorm-header">
+        <div class="dorm-icon">📚</div>
+        <h3>Northeast</h3>
+        <div class="dorm-vibe">"Smarter, still cool, pressure's off"</div>
+      </div>
+      <div class="dorm-body">
+        <p>Closest area to the majority of academic buildings, so you can roll out of bed 10 minutes before class. Less party pressure than Southwest but still very social. People here tend to be described as "smarter, still cool" with the social pressure dialed back. Worcester Dining is right here with late-night hours.</p>
+        <div class="dorm-tags">
+          <span class="dorm-tag">Close to Classes</span>
+          <span class="dorm-tag">Chill Vibe</span>
+          <span class="dorm-tag">Late-Night Dining</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dorm-card dorm-central fade-up">
+      <div class="dorm-header">
+        <div class="dorm-icon">⚡</div>
+        <h3>Central</h3>
+        <div class="dorm-vibe">"Social but not over the top"</div>
+      </div>
+      <div class="dorm-body">
+        <p>A solid middle ground — social but without Southwest's intensity. Gorman Hall is known for being a very social "popping" building. Central is a great choice if you want balance: enough energy to find your people, enough calm to actually study. Close to Franklin Dining (the best stir fry on campus).</p>
+        <div class="dorm-tags">
+          <span class="dorm-tag">Balanced</span>
+          <span class="dorm-tag">Gorman Hall</span>
+          <span class="dorm-tag">Near Franklin DC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dorm-card dorm-ohill fade-up">
+      <div class="dorm-header">
+        <div class="dorm-icon">🎨</div>
+        <h3>Orchard Hill</h3>
+        <div class="dorm-vibe">"Artsy, hipster, tight-knit"</div>
+      </div>
+      <div class="dorm-body">
+        <p>Isolated up a steep hill, O-Hill attracts the artsy and alternative crowd. Friend groups form fast and stay tight — but you might struggle to meet people outside your area unless you join clubs or Greek life. Beautiful views, unique community, and a bit of a hike to get anywhere.</p>
+        <div class="dorm-tags">
+          <span class="dorm-tag">Creative Crowd</span>
+          <span class="dorm-tag">Tight Community</span>
+          <span class="dorm-tag">Steep Hill</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dorm-card dorm-sylvan fade-up">
+      <div class="dorm-header">
+        <div class="dorm-icon">🌲</div>
+        <h3>Sylvan</h3>
+        <div class="dorm-vibe">"The quiet one (suite-style)"</div>
+      </div>
+      <div class="dorm-body">
+        <p>The most unknown and least social area. Primarily transfer students in suite-style housing. If you're an introvert who wants to avoid Southwest's chaos, this is your sanctuary. Suite setup is nice, but you'll need to be proactive about meeting people — join clubs and make the walk to campus social spots.</p>
+        <div class="dorm-tags">
+          <span class="dorm-tag">Suite-Style</span>
+          <span class="dorm-tag">Quiet</span>
+          <span class="dorm-tag">Introverts</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMICS -->
+<section class="section" id="academics" style="background: white;">
+  <div style="max-width: 1400px; margin: 0 auto;">
+    <div class="section-label fade-up">03 &mdash; Academics & Isenberg</div>
+    <h2 class="section-title fade-up">Isenberg doesn't <br>wait for you.</h2>
+    <p class="section-subtitle fade-up">As a business school freshman, there are a few things that work differently for you. Get ahead of these before advising starts.</p>
+
+    <div class="academics-grid">
+      <div class="acad-card fade-up">
+        <div class="ac-icon">📐</div>
+        <h3>Math Placement is Critical</h3>
+        <p>For Isenberg students, the Math Placement Exam determines your path into required math and science courses. It's taken via the OWL system and can only be taken once — no retakes. Study beforehand and take it seriously.</p>
+        <div class="ac-highlight">Deadline: Complete all placement assessments by June 4, 2026</div>
+      </div>
+
+      <div class="acad-card fade-up">
+        <div class="ac-icon">🗓️</div>
+        <h3>Advising is Online</h3>
+        <p>Between June 8 and July 24, you'll meet with an advisor via video call to review your placement results and register for fall classes. They'll contact you at your UMass email through Navigate. Activate your UMass email early so you don't miss it.</p>
+        <div class="ac-highlight">Check your UMass email starting June — advisors schedule through Navigate</div>
+      </div>
+
+      <div class="acad-card fade-up">
+        <div class="ac-icon">📋</div>
+        <h3>Gen Eds Matter More Than You Think</h3>
+        <p>One of the biggest freshman mistakes is ignoring General Education requirements. These don't just fill your schedule — delaying them can push back your graduation date. Start knocking them out alongside your Isenberg pre-reqs from semester one.</p>
+      </div>
+
+      <div class="acad-card fade-up">
+        <div class="ac-icon">🔓</div>
+        <h3>Before Advising: 3 Prereqs</h3>
+        <p>You must complete these before your advising appointment: (1) "Guide to the U" online module, (2) Register for "Ready for the U" orientation, (3) All placement assessments (Math, Writing, Foreign Language). Miss any of these and your advising will be delayed.</p>
+      </div>
+
+      <div class="acad-card full-width fade-up">
+        <div class="ac-icon">🏛️</div>
+        <h3>RAPs: Academic Living Communities</h3>
+        <p>Residential Academic Programs link your housing with a specific course — you live with your classmates and take a first-year class together. For Isenberg students, this means building relationships with peers in your major from day one. The RAP lottery opens May 19 with results on May 28. Most programs are open to all first-years, though some are invitation-only. Students in RAPs live in the Pierpont and Moore buildings in Southwest.</p>
+        <div class="ac-highlight">RAP Lottery: May 19 &rarr; Results: May 28 &rarr; Registration: June 1–30</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DINING -->
+<section class="dining-section" id="dining">
+  <div class="dining-inner">
+    <div class="section-label fade-up">04 &mdash; Dining</div>
+    <h2 class="section-title fade-up">You will eat better<br>than you ever have.</h2>
+    <p class="section-subtitle fade-up">Not an exaggeration. UMass Dining is routinely ranked among the best in the country.</p>
+
+    <div class="dining-badge fade-up">
+      <span>🏆</span> #1 Best Campus Food — Princeton Review
+    </div>
+
+    <div class="dining-grid">
+      <div class="dining-card fade-up">
+        <div class="dc-emoji">🔥</div>
+        <h3>Franklin</h3>
+        <div class="dc-nickname">a.k.a. "Frank"</div>
+        <p>Home of the legendary stir fry that draws students from every corner of campus. Located in Central and the closest dining option for Sylvan residents.</p>
+        <div class="dc-hours">7:00 AM – MIDNIGHT</div>
+      </div>
+
+      <div class="dining-card fade-up">
+        <div class="dc-emoji">🌙</div>
+        <h3>Worcester</h3>
+        <div class="dc-nickname">The late-night essential</div>
+        <p>Situated in Northeast, seconds from dorms, with late-night hours seven days a week. Your go-to when it's 11 PM and you need real food, not vending machine snacks.</p>
+        <div class="dc-hours">7:00 AM – MIDNIGHT &middot; LATE NIGHT 7 DAYS</div>
+      </div>
+
+      <div class="dining-card fade-up">
+        <div class="dc-emoji">🎉</div>
+        <h3>Berkshire</h3>
+        <div class="dc-nickname">Southwest's home base</div>
+        <p>The South-Southwest hub next to the social center of campus. Late-night hours until midnight. Right near Cance Hall and the party corridor — perfect post-hangout fuel.</p>
+        <div class="dc-hours">7:00 AM – MIDNIGHT</div>
+      </div>
+
+      <div class="dining-card fade-up">
+        <div class="dc-emoji">🏠</div>
+        <h3>Hampshire</h3>
+        <div class="dc-nickname">North-Southwest's spot</div>
+        <p>Conveniently placed next to the North-Southwest freshman towers and low-rises. Solid all-around dining with a homey atmosphere. The coziest of the four.</p>
+        <div class="dc-hours">7:00 AM – 10:00 PM</div>
+      </div>
+    </div>
+
+    <div class="meal-plan-box fade-up">
+      <h3>Meal Plan: What You Get</h3>
+      <p>All residential plans are unlimited — swipe in as many times as you want at any of the four Dining Commons.</p>
+      <div class="meal-plan-features">
+        <div class="meal-feature"><span class="mf-icon">✦</span> Unlimited swipes at all 4 Dining Commons</div>
+        <div class="meal-feature"><span class="mf-icon">✦</span> Dining Dollars at 30+ retail locations</div>
+        <div class="meal-feature"><span class="mf-icon">✦</span> 2 campus food trucks (babyBerk 1 & 2)</div>
+        <div class="meal-feature"><span class="mf-icon">✦</span> 15 guest swipes per semester</div>
+        <div class="meal-feature"><span class="mf-icon">✦</span> Family members eat free at any DC</div>
+        <div class="meal-feature"><span class="mf-icon">✦</span> Open 7 AM to Midnight daily</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="social-section" id="social">
+  <div class="social-inner">
+    <div class="section-label fade-up">05 &mdash; Making Friends</div>
+    <h2 class="section-title fade-up">Nobody knows anyone.<br>That's the <em>point.</em></h2>
+    <p class="section-subtitle fade-up">Every single person around you during the first weeks is also looking for friends. The only way to lose is to stay in your room.</p>
+
+    <div class="social-grid">
+      <div class="social-card fade-up">
+        <div class="sc-emoji">🎪</div>
+        <h3>RSO Activity Fairs</h3>
+        <p>UMass has hundreds of Registered Student Organizations. Show up to the activity fairs during Welcome Week and sign up for way more than you think you'll do — you can always drop later. These clubs are a massive resume booster for Isenberg students.</p>
+        <div class="sc-tip">Pro tip: Sign up for 10+, narrow down to 3-4 that stick</div>
+      </div>
+
+      <div class="social-card fade-up">
+        <div class="sc-emoji">🏠</div>
+        <h3>Join a RAP</h3>
+        <p>Residential Academic Programs place you in the same dorm and class with 20-30 peers. You eat together, study together, walk to class together. It's the fastest way to build a core friend group before the semester even starts.</p>
+        <div class="sc-tip">Lottery opens May 19 — don't sleep on this</div>
+      </div>
+
+      <div class="social-card fade-up">
+        <div class="sc-emoji">🎓</div>
+        <h3>Greek Life</h3>
+        <p>Fraternities and sororities are a popular way to expand your social and professional networks across campus. Especially useful if you're in Orchard Hill or Sylvan where organic socializing takes more effort.</p>
+        <div class="sc-tip">Rush happens early fall — research chapters beforehand</div>
+      </div>
+
+      <div class="social-card fade-up">
+        <div class="sc-emoji">🚪</div>
+        <h3>Keep Your Door Open</h3>
+        <p>Literally. During the first few weeks, leave your dorm room door open. People will walk by, peek in, introduce themselves. This is how floor friendships form. It feels awkward for about five minutes, then it becomes natural.</p>
+        <div class="sc-tip">The first 2 weeks are when 80% of floor bonds form</div>
+      </div>
+
+      <div class="social-card fade-up">
+        <div class="sc-emoji">📅</div>
+        <h3>Welcome to the U</h3>
+        <p>Orientation runs September 2–7 with campus tours, social events, and department mixers. Go to everything — even the stuff that sounds boring. You're not there for the event, you're there for the people sitting next to you.</p>
+        <div class="sc-tip">Say yes to every invite the first month</div>
+      </div>
+
+      <div class="social-card fade-up">
+        <div class="sc-emoji">⚖️</div>
+        <h3>Work Hard, Play Hard</h3>
+        <p>UMass has a strong social scene, but Isenberg is demanding. The students who thrive find the balance — prioritize grades during the week, be social on weekends. Burning out socially or academically are equally dangerous traps.</p>
+        <div class="sc-tip">Your GPA matters for Isenberg progression — protect it</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISTAKES -->
+<section class="section" id="mistakes">
+  <div class="section-label fade-up">06 &mdash; Common Mistakes</div>
+  <h2 class="section-title fade-up">Things freshmen <br>learn the hard way.</h2>
+  <p class="section-subtitle fade-up">Every one of these came from students who went through it. You don't have to.</p>
+
+  <div class="mistakes-grid">
+    <div class="mistake-card fade-up">
+      <div class="mistake-num">01</div>
+      <div class="mistake-content">
+        <h4>Skipping Gen Ed requirements</h4>
+        <p>Delaying mandatory General Education courses is one of the most common reasons students don't graduate on time. Start early, even if they're not exciting.</p>
+      </div>
+    </div>
+    <div class="mistake-card fade-up">
+      <div class="mistake-num">02</div>
+      <div class="mistake-content">
+        <h4>Never going to office hours</h4>
+        <p>Professors and TAs remember students who show up. These relationships become job references, research opportunities, and letters of recommendation. Isenberg is competitive — build these connections early.</p>
+      </div>
+    </div>
+    <div class="mistake-card fade-up">
+      <div class="mistake-num">03</div>
+      <div class="mistake-content">
+        <h4>Ignoring your UMass email</h4>
+        <p>Your UMass email is the only way the university sends official updates — enrollment changes, financial notices, advising schedules. Not checking it is playing with fire.</p>
+      </div>
+    </div>
+    <div class="mistake-card fade-up">
+      <div class="mistake-num">04</div>
+      <div class="mistake-content">
+        <h4>Forgetting SPIRE holds & to-do's</h4>
+        <p>SPIRE will block your class registration if you have unresolved holds or incomplete to-do items. Check it regularly — don't find out at 3 AM during course enrollment.</p>
+      </div>
+    </div>
+    <div class="mistake-card fade-up">
+      <div class="mistake-num">05</div>
+      <div class="mistake-content">
+        <h4>Using BitTorrent on campus Wi-Fi</h4>
+        <p>Peer-to-peer file sharing for copyrighted material on the university network can lead to serious sanctions — including lawsuits. Just don't.</p>
+      </div>
+    </div>
+    <div class="mistake-card fade-up">
+      <div class="mistake-num">06</div>
+      <div class="mistake-content">
+        <h4>Underestimating Western Mass winter</h4>
+        <p>The Amherst winter is no joke. Black ice is a real hazard, especially walking downtown. Invest in good boots, a real coat, and learn to layer. You'll thank yourself in February.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="checklist-section" id="checklist">
+  <div class="checklist-inner">
+    <div class="section-label fade-up">07 &mdash; Your Checklist</div>
+    <h2 class="section-title fade-up">Don't miss a thing.</h2>
+    <p class="section-subtitle fade-up">Click to check off as you go. Everything you need to do before September.</p>
+
+    <div class="checklist-grid" id="checklistGrid">
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Pay enrollment deposit <small>Due May 1</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Activate your NetID & set up two-step login (MFA) <small>Microsoft Authenticator app</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Enter the RAP lottery <small>Opens May 19, results May 28</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Complete "Guide to the U" module <small>Required before advising</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Register for "Ready for the U" orientation <small>Required before advising</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Take all placement assessments (Math, Writing, Foreign Language) <small>Due June 4 — one attempt only!</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Upload your UCard photo <small>Due June 4</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Open Housing Portal & sign Occupancy License <small>Opens June 1</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Complete Roommate Matching Profile <small>Be honest about sleep & habits</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Submit housing preferences & roommate group <small>Due June 30</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Attend online advising appointment <small>June 8 – July 24</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Register for fall classes with advisor <small>During advising appointment</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Check room assignment on SPIRE <small>Posted August 3</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Pay tuition or confirm financial aid <small>Due August 10</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Complete AlcoholEdu & SAPU online modules <small>Due September 1 — or you'll get a hold</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Submit immunization records <small>Required for enrollment</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Waive SHBP if you have private insurance <small>Due September 21 — must do EVERY fall</small></div>
+      </div>
+      <div class="checklist-item fade-up" onclick="this.classList.toggle('checked')">
+        <div class="cl-box"></div>
+        <div class="cl-text">Connect to eduroam Wi-Fi on move-in day <small>Campus wireless network</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRO TIPS MARQUEE -->
+<section class="tips-section" id="tips">
+  <div class="tips-inner">
+    <div class="section-label fade-up">08 &mdash; Insider Knowledge</div>
+    <h2 class="section-title fade-up">Things nobody<br>tells you.</h2>
+  </div>
+  <div class="tips-marquee">
+    <div class="tips-track" id="tipsTrack">
+      <div class="tip-card">
+        <div class="tp-quote">"Personal printers don't work on campus. You get a $5 credit (100 pages) per semester at UPrint stations. Save yourself the luggage space."</div>
+        <div class="tp-source">— Campus IT</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"The W.E.B. Du Bois Library is the tallest research library in the country. The upper floors are dead silent — perfect for deep study sessions. The lower floors are social."</div>
+        <div class="tp-source">— Campus Resources</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"Dining Dollars carry over to the next semester but not the next year. Use them at the food trucks (babyBerk 1 & 2) or any of the 30+ retail spots on campus."</div>
+        <div class="tp-source">— Dining Services</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"Isenberg is competitive — joining RSOs early isn't just about friends. It's your resume. Start building professional connections semester one, not junior year."</div>
+        <div class="tp-source">— Isenberg Student</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"Check SPIRE every few weeks for holds and to-do's. A surprise hold at registration time will ruin your schedule. There's nothing worse than being locked out of classes."</div>
+        <div class="tp-source">— Academic Advising</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"Computer classrooms across campus have high-end academic software for free. Don't buy expensive software before checking what's already available to you as a student."</div>
+        <div class="tp-source">— IT Services</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"Destination Days is specifically for admitted students — virtual tours, department visits, and the chance to really explore campus before you commit. Don't skip it."</div>
+        <div class="tp-source">— Admissions</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"Your family can eat for free at any Dining Commons with your meal plan. When they visit for Parents' Weekend, bring them to Frank for the stir fry."</div>
+        <div class="tp-source">— Dining Perks</div>
+      </div>
+      <!-- Duplicates for seamless scroll -->
+      <div class="tip-card">
+        <div class="tp-quote">"Personal printers don't work on campus. You get a $5 credit (100 pages) per semester at UPrint stations. Save yourself the luggage space."</div>
+        <div class="tp-source">— Campus IT</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"The W.E.B. Du Bois Library is the tallest research library in the country. The upper floors are dead silent — perfect for deep study sessions. The lower floors are social."</div>
+        <div class="tp-source">— Campus Resources</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"Dining Dollars carry over to the next semester but not the next year. Use them at the food trucks (babyBerk 1 & 2) or any of the 30+ retail spots on campus."</div>
+        <div class="tp-source">— Dining Services</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"Isenberg is competitive — joining RSOs early isn't just about friends. It's your resume. Start building professional connections semester one, not junior year."</div>
+        <div class="tp-source">— Isenberg Student</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"Check SPIRE every few weeks for holds and to-do's. A surprise hold at registration time will ruin your schedule. There's nothing worse than being locked out of classes."</div>
+        <div class="tp-source">— Academic Advising</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"Computer classrooms across campus have high-end academic software for free. Don't buy expensive software before checking what's already available to you as a student."</div>
+        <div class="tp-source">— IT Services</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"Destination Days is specifically for admitted students — virtual tours, department visits, and the chance to really explore campus before you commit. Don't skip it."</div>
+        <div class="tp-source">— Admissions</div>
+      </div>
+      <div class="tip-card">
+        <div class="tp-quote">"Your family can eat for free at any Dining Commons with your meal plan. When they visit for Parents' Weekend, bring them to Frank for the stir fry."</div>
+        <div class="tp-source">— Dining Perks</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">Isenberg<span>'</span>30</div>
+  <p>Built for Isenberg School of Management Class of 2030. All dates are for Fall 2026 enrollment. Always verify deadlines on the official UMass Amherst website.</p>
+  <div class="footer-links">
+    <a href="https://www.umass.edu/admissions/" target="_blank">UMass Admissions</a>
+    <a href="https://www.umass.edu/living/" target="_blank">Housing Portal</a>
+    <a href="https://www.umass.edu/registrar/spire" target="_blank">SPIRE</a>
+    <a href="https://www.isenberg.umass.edu/" target="_blank">Isenberg School</a>
+    <a href="https://umassdining.com/" target="_blank">UMass Dining</a>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 &middot; Unofficial student guide &middot; Not affiliated with UMass Amherst
+  </div>
+</footer>
+
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Mobile menu toggle
+document.getElementById('mobileToggle').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id], .dining-section, .social-section, .checklist-section, .tips-section, .timeline-section');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 100;
+    if (window.scrollY >= top) {
+      current = section.getAttribute('id') || '';
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// Scroll reveal animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

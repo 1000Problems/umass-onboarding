@@ -1,0 +1,8 @@
+{
+  "name": "umass-onboarding",
+  "version": "1.0.0",
+  "description": "UMass Amherst Isenberg Class of 2030 onboarding guide",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
